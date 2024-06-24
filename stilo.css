@@ -8,7 +8,7 @@ background-repeat: no-repeat;
 }
 body {
 -moz-osx-font-smoothing:grayscale;
--ms-flex-direction:column;
+-ms-flex-direction:initial;
 -webkit-box-direction:normal;
 -webkit-box-orient:vertical;
 -webkit-font-smoothing:antialiased;
