@@ -11,12 +11,11 @@ body {
 -ms-flex-direction:initial;
 -webkit-box-direction:normal;
 -webkit-box-orient:vertical;
--webkit-box-orient:center;
-
+-webkit-box-orient: horizontal;
 -webkit-font-smoothing:antialiased;
 background:#FFFFE0;
 color: #8B008B;
-display:flex;
+
 flex-direction:column;
 font-family:Montserrat, sans-serif;
 font-size: 1em;
