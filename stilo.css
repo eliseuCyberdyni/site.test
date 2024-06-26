@@ -15,7 +15,7 @@ body {
 -webkit-font-smoothing:antialiased;
 background:#FFFFE0;
 color: #8B008B;
-
+display:flex;
 flex-direction:column;
 font-family:Montserrat, sans-serif;
 font-size: 1em;
