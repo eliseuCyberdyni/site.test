@@ -11,6 +11,8 @@ body {
 -ms-flex-direction:initial;
 -webkit-box-direction:normal;
 -webkit-box-orient:vertical;
+-webkit-box-orient:center;
+
 -webkit-font-smoothing:antialiased;
 background:#FFFFE0;
 color: #8B008B;
