@@ -15,7 +15,7 @@ body {
 background:#FFFFE0;
 color: #8B008B;
 display:flex;
-flex-direction:column;
+flex-direction:inherit;
 font-family:Montserrat, sans-serif;
 font-size: 1em;
 font-weight:10px;
