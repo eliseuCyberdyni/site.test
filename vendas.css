@@ -1,9 +1,16 @@
 body{
-	background-color: sienna;
-background-image: url(https://img.freepik.com/vetores-gratis/conceito-de-design-plano-cms_23-2148832455.jpg?t=st=1720528918~exp=1720532518~hmac=9fdb4aa43f7f29c6dbd4782019c75b12a0b1e9c8846110ab0f3918345b7eb70a&w=740);
-background-repeat: no-repeat;
-	background-position: center;
-	height:699px;
+background: -webkit-linear-gradient(left, #cc3c3c, #5f57a4);
+background: -moz-linear-gradient(left, #cc3c3c, #5f57a4);
+background: -ms-linear-gradient(left, #cc3c3c, #5f57a4);
+background: -o-linear-gradient(left, #cc3c3c, #5f57a4);
+background: linear-gradient(to right, #cc3c3c, #5f57a4);
+
+
+
+
+
+	
+
 	
 
 }
