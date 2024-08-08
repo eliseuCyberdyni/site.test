@@ -6,97 +6,125 @@ background: -o-linear-gradient(left, #cc3c3c, #5f57a4);
 background: linear-gradient(to right, #cc3c3c, #5f57a4);
 }
 
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 
-html, body {
-  height: 100%;
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
 }
 
-.wrap {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--bg-color);
 }
 
-.button {
-  min-width: 300px;
-  min-height: 60px;
-  display: inline-flex;
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #313133;
-  background: #4FD1C5;
-background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+button {
+  position:relative;
+  padding: 10px 20px;  
   border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-  transition: all 0.3s ease-in-out 0s;
+  background: none;
   cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
-  }
+  
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px; 
+  z-index: 0;  
+  overflow: hidden;   
+}
 
-.button::before {
-content: '';
-  border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
-  border: 6px solid #00FFCB;
-  box-shadow: 0 0 60px rgba(0,255,203,.64);
+button:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after, button::after {
+  content: var(--content);
+  display: block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
 }
 
-.button:hover, 
-.button:focus {
-  color: #313133;
-  transform: translateY(-6px);
+button::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: var(--bg-color);
+  color:transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
 }
 
-.button:hover::before, 
-.button:focus::before {
-  opacity: 1;
+button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
 }
 
-.button::after {
+button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles */
+button::before {
   content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #00FFCB;
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
   position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
+  animation: bubbles 5s linear infinite both;
 }
 
-.button:hover::after, 
-.button:focus::after {
-  animation: none;
-  display: none;
-}
-
-@keyframes ring {
-  0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
+@keyframes bubbles {
+  from {
+    transform: translate();
   }
-  100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
+  to {
+    transform: translate(0, -66.666%);
   }
 }
