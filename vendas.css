@@ -6,12 +6,6 @@ background: -o-linear-gradient(left, #cc3c3c, #5f57a4);
 background: linear-gradient(to right, #cc3c3c, #5f57a4);
 }
 
-:root {
-  --text-color: hsla(210, 50%, 85%, 1);
-  --shadow-color: hsla(210, 40%, 52%, .4);
-  --btn-color: hsl(210, 80%, 42%);
-  
-}
 body{
   text-align:center;
   background-color:#ffcc8e;
